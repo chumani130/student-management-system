@@ -1,1 +1,47 @@
-<p>admin-parent-guardian works!</p>
+<div class="bg" style="margin-top: 300px">
+    <mat-spinner *ngIF="isSpinning" [diameter]="50" class="spinner"></mat-spinner>
+    <div class="parent">
+        <div class="child">
+            <h1 class="form-title">Dashboard</h1>
+            <form action="" class="login-form">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-lebel>ID Number</mat-lebel>
+                    <input matInput type="idNo" placeholder="Enter ID number" formControlName="idNo"/>
+                    <!-- <mat-error *ngIf="validateForm.get("idNo")?.hasError("idNo")">THis input is required!</mat-error>
+                    <mat-error *ngIf="validateForm.get("idNo")?.hasError("idNo")">please enter valid idNo</mat-error> -->
+                </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>First Name</mat-lebel>
+                <input matInput type="fName" placeholder="Enter FirstName" formControlName="fName"/>
+                <!-- <mat-error *ngIf="validateForm.get("fName")?.hasError("fName")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("fName")?.hasError("fName")">please enter valid fName</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>Last Name</mat-lebel>
+                <input matInput type="lName" placeholder="Enter LastName" formControlName="lName"/>
+                <!-- <mat-error *ngIf="validateForm.get("lName")?.hasError("lname")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("lName")?.hasError("lName")">please enter valid lName</mat-error> -->
+            </mat-form-field>            
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Relationship With Student</mat-label>
+                <input matInput type="relationship" placeholder="Enter relationship" formControlName="relationship"/>
+                <!-- <mat-error *ngIf="validateForm.get("relationship")?.hasError("relationship")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("relationship")?.hasError("relationship")">please enter valid relationship</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Contact Details</mat-label>
+                <input matInput type="contact" placeholder="Enter contact" formControlName="contact"/>
+                <!-- <mat-error *ngIf="validateForm.get("contact")?.hasError("contact")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("contact")?.hasError("contact")">please enter valid contact</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Address" formControlName="address"></textarea>
+                <!-- <mat-error *ngIf="validateForm.get("address")?.hasError("required")">THis input is required!</mat-error> -->
+            </mat-form-field>
+            <button mat-button color="primary">Add Parent/Guardian</button>
+
+            </form>
+        </div>
+    </div>
+</div>

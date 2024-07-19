@@ -1,1 +1,83 @@
-<p>admin-dashboard works!</p>
+<div class="bg" style="margin-top: 300px">
+    <mat-spinner *ngIF="isSpinning" [diameter]="50" class="spinner"></mat-spinner>
+    <div class="parent">
+        <div class="child">
+            <h1 class="form-title">Dashboard</h1>
+            <form action="" class="login-form">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-lebel>ID Number</mat-lebel>
+                    <input matInput type="idNo" placeholder="Enter ID number" formControlName="idNo"/>
+                    <!-- <mat-error *ngIf="validateForm.get("idNo")?.hasError("idNo")">THis input is required!</mat-error>
+                    <mat-error *ngIf="validateForm.get("idNo")?.hasError("idNo")">please enter valid idNo</mat-error> -->
+                </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>First Name</mat-lebel>
+                <input matInput type="fName" placeholder="Enter FirstName" formControlName="fName"/>
+                <!-- <mat-error *ngIf="validateForm.get("fName")?.hasError("fName")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("fName")?.hasError("fName")">please enter valid fName</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>Last Name</mat-lebel>
+                <input matInput type="lName" placeholder="Enter LastName" formControlName="lName"/>
+                <!-- <mat-error *ngIf="validateForm.get("lName")?.hasError("lname")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("lName")?.hasError("lName")">please enter valid lName</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>Email</mat-lebel>
+                <input matInput type="email" placeholder="Enter email" formControlName="lName"/>
+                <!-- <mat-error *ngIf="validateForm.get("email")?.hasError("email")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("email")?.hasError("email")">please enter valid email</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>Password</mat-lebel>
+                <input matInput type="password" placeholder="Enter password" formControlName="password"/>
+                <!-- <mat-error *ngIf="validateForm.get("password")?.hasError("password")">THis input is required!</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>Confirm Password</mat-lebel>
+                <input matInput type="password" placeholder="Enter confirmPassword" formControlName="checkPassword"/>
+                <!-- <mat-error *ngIf="validateForm.get("checkPassword")?.hasError("required")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("checkPassword")?.hasError("confirm")">please enter valid confirmPassword</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-lebel>Date Of Birth</mat-lebel>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dateOfBirth"/>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <!-- <mat-error *ngIf="validateForm.get("dateOfBirth")?.hasError("required")">THis input is required!</mat-error>
+                 -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender" placeholder="select Gender"/>
+                    <mat-option *ngFor="let gender of GENDER" [value]="gender">{{gender}}</mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="validateForm.get("gender")?.hasError("required")">THis input is required!</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Student Number</mat-label>
+                <input matInput type="sNumber" placeholder="Enter sNumber" formControlName="sNumber"/>
+                <!-- <mat-error *ngIf="validateForm.get("sNumber")?.hasError("sNumber")">THis input is required!</mat-error>-->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Update Profile Pic</mat-label>
+                <input matInput type="pic" placeholder="Enter pic" formControlName="pic"/>
+                <!-- <mat-error *ngIf="validateForm.get("pic")?.hasError("pic")">THis input is required!</mat-error>-->
+            </mat-form-field>
+            <mat-label>Grade</mat-label>
+                <mat-select formControlName="grade" placeholder="Select grade">
+                    <mat-option *ngFor="let grade of GRADE" [value]="grade">{{grade}}</mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="validateForm.get("grade")?.hasError("grade")">THis input is required!</mat-error>-->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Parent Or Guardian</mat-label>
+                <input matInput type="parentGuardian" placeholder="Enter parentGuardian" formControlName="parentGuardian"/>
+                <!-- <mat-error *ngIf="validateForm.get("parentGuardian")?.hasError("parentGuardian")">THis input is required!</mat-error>
+                <mat-error *ngIf="validateForm.get("parentGuardian")?.hasError("parentGuardian")">please enter valid parentGuardian</mat-error> -->
+            </mat-form-field>
+            <button mat-button color="primary">Add User</button>
+            </form>
+        </div>
+    </div>
+</div>

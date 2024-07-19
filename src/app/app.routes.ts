@@ -1,17 +1,22 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { LayoutComponent } from './layout/layout.component';
 
-import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
-import { DashboardStudentComponent } from './dashboard-student/dashboard-student.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminParentGuardianComponent } from './admin/admin-parent-guardian/admin-parent-guardian.component';
+import { UserParentGuardianComponent } from './user/user-parent-guardian/user-parent-guardian.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: "login", component: LoginComponent},
-    { path: '', component: LayoutComponent,
+    { path: 'admin', component: AdminDashboardComponent, canActivate: [adminGuard],
         children: [
-            {path: 'dashboard-admin', component: DashboardAdminComponent},
-            {path: 'dashboard-student', component: DashboardStudentComponent}
+            {path: 'admin-parent-guardian', component: AdminParentGuardianComponent},
+        ]
+    },
+    { path: 'user', component: UserDashboardComponent, canActivate: [userGuard]
+        children: [
+            {path: 'user-parent-guardian', component: UserParentGuardianComponent}
 
         ]
     }
